@@ -11,7 +11,7 @@ public class main {
 
         System.out.printf("Número mostrado: %d", nf.numberFormatter(5));
         System.out.printf("\nEl número mostrado es: % .2f", nf.numberFormatter(2.24235235));
-        System.out.printf("\nEl número mostrado es: %s ", nf.numberFormatter(2.32897528357, 5));
+        System.out.printf("\nEl número mostrado es: %s ", nf.numberFormatter(2.382732864, 25));
 
     }
 
