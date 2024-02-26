@@ -1,5 +1,0 @@
-public class plantilla {
-    //AQUÍ VAN A IR PLANTILLAS DE CLASES QUE
-    // FACILITARÁN EL TRABAJO DE PROGRAMACIÓN
-    
-}
