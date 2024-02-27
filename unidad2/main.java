@@ -63,9 +63,13 @@ public class main {
         NumberFormatter nf = new NumberFormatter();
         System.out.printf("Número mostrado: %d", nf.numberFormatter(5));
         System.out.printf("\nEl número mostrado es: % .2f", nf.numberFormatter(2.24235235));
+<<<<<<< HEAD
         System.out.printf("\nEl número mostrado es: %s ", nf.numberFormatter(2.327656565, 5));
         */
 
+=======
+        System.out.printf("\nEl número mostrado es: %s ", nf.numberFormatter(2.382732864, 25));
+>>>>>>> da0470d0007a2c8d29467ea6038532c4b940c106
 
     }
 
