@@ -8,8 +8,8 @@ public class CalculadoraImpuestos {
         return ventas * (porcentajeImpuestos / 100);
     }
 
-    public double Impuesto(double div, double porcentajeImpuesto, double exencion){
-        double impuestos = div * (porcentajeImpuesto / 100);
+    public double Impuesto(double dividendos, double porcentajeImpuesto, double exencion){
+        double impuestos = dividendos * (porcentajeImpuesto / 100);
 
         if(impuestos > exencion){
             return impuestos - exencion;
