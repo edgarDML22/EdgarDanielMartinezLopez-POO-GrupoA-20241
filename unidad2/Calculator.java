@@ -11,6 +11,10 @@ public class Calculator {
         return n1 + n2;
     }
 
+    public double suma(double n3){
+        return n1 + n2 + n3;
+    }
+
     public double resta() {
         return n1 - n2;
     }
