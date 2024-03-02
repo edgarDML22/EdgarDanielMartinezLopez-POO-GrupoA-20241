@@ -1,18 +1,20 @@
 public class main {
     public static void main(String[] args) {
-        Calculator calc1 = new Calculator(10, 3);
+        Employee empleado1 = new Employee("Edgar",
+         "Martínez", 2345, "B");
 
-        System.out.printf("La suma es: %f", calc1.suma());
-        System.out.printf("\nLa resta es: %f", calc1.resta());
-        System.out.printf("\nEl producto es: %f", calc1.multiplicacion());
-        System.out.printf("\nLa división es: %f", calc1.division());
+         //System.out.printf("El número de cuenta es: %s", empleado1.getAccount().getType());
+         //el empleado1.getAccount() crea una instancia de la clase BankAccount y el getAccountNumber invoca al método de la clase BankAccount ya que es un objeto de es clase
 
-        NumberFormatter nf = new NumberFormatter();
+         empleado1.getAccount().cargarCuenta(356);
 
-        System.out.printf("Número mostrado: %d", nf.numberFormatter(5));
-        System.out.printf("\nEl número mostrado es: % .2f", nf.numberFormatter(2.24235235));
-        System.out.printf("\nEl número mostrado es: %s ", nf.numberFormatter(2.382732864, 25));
+         empleado1.printAccount();
+         
+        //System.out.println("\nEl monto actual es: " + empleado1.getAccount().getAmount());
+        //System.out.println(empleado1.getAccount());
 
+
+    
     }
 
 }
