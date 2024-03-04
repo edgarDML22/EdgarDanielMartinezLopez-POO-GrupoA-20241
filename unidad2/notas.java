@@ -39,6 +39,20 @@ public class notas {
             public String getNombre() {
                     return nombre;
                 }
+
+
+        >>HERENCIA<<
+        Para establecer una relación de herencia entre dos clases debemos hacer lo siguiente:
+        Supongamos llamamos a las clases clasePadre y claseHija. En la clasePadre crearemos sus atributos
+        y métodos de manera ordinaria y cuando creemos la claseHija debemos colocar en la primera línea lo siguiente:
+            public class claseHija extends clasePadre{...
+        
+        Al realizar esto se pasaran en automático todos los atributos de la clase padre a la clase hija.
+        Ahora bien, si se crea un constructor se deberá asignar un atributo con la palabra "super", dentro del cuál se deben colocar
+        los atributos pertenecientes a la clasePadre, quedando de la siguiente forma:
+
+                super(nombre, apellido, edad, salario);
+
         
         private BanckAccount = new BankAccount(long saccount);
         
