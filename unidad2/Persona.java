@@ -3,6 +3,11 @@ public class Persona {
     int edad;
     double salario;
 
+    
+
+    public Persona() {
+    }
+
     public Persona(String nombre, String apellido, int edad, double salario){
         this.apellido = apellido;
         this.nombre = nombre;
