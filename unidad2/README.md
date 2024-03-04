@@ -136,6 +136,37 @@ public class Empleado extends Persona{
 1. Colocar en la primer línea del código `extends clasePadre`
 2. En el constructor colocar `super(Parámetros)` para inicialiar los atributos de la clasePadre
 
+---
+## Polimorfismo
+En Java se trabaja con variables con un tipo en específico. Si intentamos trabajar con datos diferentes a los del tipo de dato asignado Java mostrará de inmediato un error.
+Sin embargo en el paradigma de POO esto es posible. Ya que si creamos variables de una clase Padre, estas pueden ser igualdas a objetos que sean de alguna de sus clases hijas. Observe el ejemplo
+
+```java
+//CLASE PADRE
+Persona persona = new Persona(); 
+//CLASES HIJAS
+Empleado empleado = new Empleado();
+Maestro maestro = new Maestro();
+Gerente gerente = new Gerente();
+Cocinero cocinero = new cocinero;
+
+//ESTO ES CORRECTO
+persona = empleado;
+persona = maestro;
+//ESTO ES INCORRECTO
+empleado = persona;
+maestro = persona
+
+Persona array[] = new Persona[5]
+array[0] = empleado;
+array[1] = maestro;
+array[2] = gerente;
+array[3] = cocinero;
+```
+
+Nótese que una clase padre puede ser igualada con una clase hija. Pero una clase hija no puede ser igualada con su clase padre. Esto debido a que la clase padre tiene mayor jerarquía.  
+Observe el arreglo `array` puede contener objetos de tipo persona. Ya que al tratarse de sus clases hijas son tomadas como el mismo tipo de dato.
+
 
 
 
