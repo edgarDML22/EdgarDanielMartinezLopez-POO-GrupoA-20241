@@ -3,7 +3,14 @@ public class main {
     public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
-    Persona p1 = new Persona("Edgar", 18, 150);
+    Animal animal = new Animal("León", "Felino", false, "Templado", "Zimbawe");
+    System.out.println(animal.getHabitat().clima);
+    System.out.println(animal.habitat.clima);
+    
+
+
+
+    /*Persona p1 = new Persona("Edgar", 18, 150);
     p1.setAge(25);
     System.out.println(p1.getAge());
 
@@ -22,7 +29,7 @@ public class main {
     System.out.println(producto1.getNombre());
     System.out.println(producto1.getStock());
     System.out.println(producto1.getPrecio());
-
+    */
     
         
         
