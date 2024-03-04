@@ -95,7 +95,46 @@ Ya que si únicamente escribimos `persona1.account` Java nos devolverá el espac
 En este tipo de relación hay una clase Padre y una clase Hija que recibe atributos y métodos de su clase Padre. Para utilizar esta realción en Java debemos hacer lo siguiente:  
 Nota: Usaremos las clases Persona y Empleado para este ejemplo:
 
+```java
+public class Persona {
+    String nombre;
 
+    public Persona(String nombre){
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }  
+}
+```
+
+```java
+public class Empleado extends Persona{   
+    String estadoCivil;
+    
+    public Empleado(String estadoCivil) {
+        super(nombre);
+        this.estadoCivil = estadoCivil;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }   
+}
+```
+
+1. Colocar en la primer línea del código `extends clasePadre`
+2. En el constructor colocar `super(Parámetros)` para inicialiar los atributos de la clasePadre
 
 
 
