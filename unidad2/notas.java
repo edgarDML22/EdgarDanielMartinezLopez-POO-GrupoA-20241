@@ -54,6 +54,8 @@ public class notas {
                 super(nombre, apellido, edad, salario);
 
         
+        private BanckAccount = new BankAccount(long saccount);
+        
          */
         
     }
