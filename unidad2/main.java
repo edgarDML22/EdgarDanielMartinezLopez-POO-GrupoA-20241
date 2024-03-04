@@ -3,6 +3,14 @@ public class main {
     public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
+
+    
+
+
+
+
+
+    /* CLASE 27/02/24
     Persona p1 = new Persona("Edgar", 18, 150);
     p1.setAge(25);
     System.out.println(p1.getAge());
@@ -23,7 +31,7 @@ public class main {
     System.out.println(producto1.getStock());
     System.out.println(producto1.getPrecio());
 
-    
+    */
         
         
         

@@ -40,6 +40,8 @@ public class notas {
                     return nombre;
                 }
         
+        private BanckAccount = new BankAccount(long saccount);
+        
          */
         
     }
