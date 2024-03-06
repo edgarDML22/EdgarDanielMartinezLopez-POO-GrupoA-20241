@@ -167,7 +167,12 @@ array[3] = cocinero;
 Nótese que una clase padre puede ser igualada con una clase hija. Pero una clase hija no puede ser igualada con su clase padre. Esto debido a que la clase padre tiene mayor jerarquía.  
 Observe el arreglo `array` puede contener objetos de tipo persona. Ya que al tratarse de sus clases hijas son tomadas como el mismo tipo de dato.
 
-
-
-
-
+---
+## Método toString
+Este método muestra todos los atributos de una clase en un solo método. Se puede generar de forma automática con el comando `Ctrl + .` seleccionando la opción **toString()**. Observe el ejemplo:
+```java
+@Override
+public String toString() {
+    return "Persona [edad=" + edad + ", nombre=" + nombre + ", apellido=" + apellido + "]";
+}
+```
