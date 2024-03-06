@@ -1,51 +1,33 @@
 public class Posnet {
-    Tarjeta tarjeta;
     double monto;
     int cantidadCuotas;
-
 
     public Posnet() {
     }
     
-    public String abonar(Tarjeta tarjeta, double monto, int cantidadCuotas){
-        this.tarjeta = tarjeta;
+    public Ticket abonar(Tarjeta tarjeta, double monto, int cantidadCuotas){
+        Ticket ticket = null;
         this.monto = monto;
         this.cantidadCuotas = cantidadCuotas;
 
-        calcularMonto();        
-        if(monto > tarjeta.saldo){
-            return null;
-        }
-        else{
-            return String.format(" %s %s\n% .2f\n% .2f", getTarjeta().getTitular().getNombre(), getTarjeta().getTitular().getApellido(), this.monto, pagoCuota());
-            //actualizarSaldo();
-        }
+        calcularMonto(cantidadCuotas);
 
+         if(tarjeta.datosValidos(tarjeta, monto, cantidadCuotas)){
+            if(tarjeta.saldoDisponible(monto)){          
+                tarjeta.actualizarSaldo(this.monto);
+                ticket = new Ticket(tarjeta.nombreCompleto(), this.monto, pagoCuota());
+            }
+         }
+
+        return ticket;
     }
-    
 
-
-
-
-
-    //Checar que haya suficiente saldo en la tarjeta
-    //Teniendo la consideración del recargo
-
-
-    private void calcularMonto(){     
-        this.monto = monto + ((cantidadCuotas - 1) * 0.03) * monto;
+    private void calcularMonto(int cantidadCuotas){    
+        this.monto = monto + ((cantidadCuotas - 1) * 0.03)*monto;
     }
 
     private double pagoCuota(){
         return monto / cantidadCuotas;
-    }
-
-    public Tarjeta getTarjeta() {
-        return tarjeta;
-    }
-
-    public void setTarjeta(Tarjeta tarjeta) {
-        this.tarjeta = tarjeta;
     }
 
     public double getMonto() {
@@ -60,10 +42,4 @@ public class Posnet {
         return cantidadCuotas;
     }
 
-    public void setCantidadCuotas(int cantidadCuotas) {
-        this.cantidadCuotas = cantidadCuotas;
-    }
-
-
-    
 }

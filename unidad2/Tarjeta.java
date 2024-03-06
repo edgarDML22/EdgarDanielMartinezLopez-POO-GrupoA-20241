@@ -16,45 +16,55 @@ public class Tarjeta {
         return entidadFinanciera;
     }
 
-    public void setEntidadFinanciera(String entidadFinanciera) {
-        this.entidadFinanciera = entidadFinanciera;
-    }
-
     public String getEntidadBancariaString() {
         return entidadBancariaString;
-    }
-
-    public void setEntidadBancariaString(String entidadBancariaString) {
-        this.entidadBancariaString = entidadBancariaString;
     }
 
     public long getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    public void setNumeroTarjeta(long numeroTarjeta) {
-        this.numeroTarjeta = numeroTarjeta;
-    }
-
     public double getSaldo() {
         return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
     }
 
     public Titular getTitular() {
         return titular;
     }
 
-    public void setTitular(Titular titular) {
-        this.titular = titular;
+    public boolean saldoDisponible(double montoFinal){
+        if(montoFinal <= saldo){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
-    
+    public boolean datosValidos(Tarjeta tarjeta, double monto, int cantidadCuotas){
+        return validarTarjeta(tarjeta) && validarMonto(monto) && validarCantidadCuotas(cantidadCuotas);
+    }
 
+    private boolean validarTarjeta(Tarjeta tarjeta){
+        return tarjeta != null;
+
+    }
     
+    private boolean validarMonto(double monto){
+        return monto > 0;
+    }
+
+    private boolean validarCantidadCuotas(int c){
+        return c >= 1 && c <= 6;
+    }
+
+    public void actualizarSaldo(double montoFinal){
+        saldo -= montoFinal;
+    }
+
+    public String nombreCompleto(){
+        return titular.nombreCompleto();
+    }
 
     
 }

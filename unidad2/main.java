@@ -9,13 +9,17 @@ public class main {
         /*Persona persona = new Persona();
         persona = emple;*/  
 
+        Posnet posnet = new Posnet();
         Tarjeta card = new Tarjeta("CasterMard", "Bancomer", 123456, 15000, 
         "Ejemplo de DNI", "Edgar", "Martínez", "ejemplo@email.com", "+524490764");
 
-        Posnet posnet = new Posnet();
-        System.out.println(posnet.abonar(card, 10000, 5));
 
+        System.out.printf("Saldo actual: % .2f", card.getSaldo());
 
+        Ticket ticketGenerado = posnet.abonar(card, 10000, 5);
+        System.out.println(ticketGenerado);
+
+        System.out.printf("Saldo actual: % .2f", card.getSaldo());
         
     }
     
