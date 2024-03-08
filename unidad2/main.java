@@ -19,8 +19,6 @@ public class main {
         empleado1.agregarCuenta(147902, "A");
 
 
-
-
         boolean flag = true;
         while (flag) {
             showOptions();
