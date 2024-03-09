@@ -4,7 +4,8 @@ public class Employee {
     private String name;
     private String lastName;
     private BankAccount account;
-    ArrayList <BankAccount>AccountList = new ArrayList<>();
+    private boolean status = true;
+    private ArrayList <BankAccount> AccountList = new ArrayList<>();
 
     public Employee(String name, String lastName) {
         this.name = name;
@@ -15,12 +16,11 @@ public class Employee {
         if(validType(type)){
             this.name = name;
             this.lastName = lastName;
-            account = new BankAccount(accountNumber, type);
+            this.account = new BankAccount(accountNumber, type);
             AccountList.add(account);
         }
         else{
-            this.name = null;
-            System.out.println("No fue posible crear el empleado");
+            this.status = false;
         } 
     }
 
@@ -36,13 +36,21 @@ public class Employee {
         return account;
     }
 
-    public void agregarCuenta(long accountNumber, String type){
+    public boolean isStatus() {
+        return status;
+    }
+
+    public ArrayList <BankAccount> getAccountList(){//CREO QUE NO LO OCUPAS    
+        return AccountList;
+    }
+
+    public BankAccount addAccount(long accountNumber, String type){
+        BankAccount newAccount = null;
         if(validType(type)){
-            AccountList.add(new BankAccount(accountNumber, type));
+            newAccount = new BankAccount(accountNumber, type);
+            AccountList.add(newAccount);
         }
-        else{
-            System.out.println("No fue posible agregar la cuenta");
-        }
+        return newAccount;
     }
 
     private boolean validType(String type){
@@ -57,25 +65,17 @@ public class Employee {
         }
     }
 
-    public void showData(){
-        System.out.printf("| Nombre del empleado: %s |",nombreCompleto());
-        System.out.println("\n______________________________________________________________________");
-    }
-
-    public void showAccountList(){
-        for (BankAccount bankAccount : AccountList) {
-            System.out.printf("| Número de cuenta: %d | Tipo de cuenta: %s | Saldo de la cuenta: % .2f |",bankAccount.getAccountNumber(), bankAccount.getType(), bankAccount.getAmount());
-            System.out.println("\n______________________________________________________________________");
-        }
-    }
-
-    public void getAccountList(){
-        
-    }
-
-    public String nombreCompleto(){
+    public String getFullName(){
         return name + " " + lastName;
     }
 
-  
+    /*private String generarID(){
+        String bank = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
+        String cad = "";
+        for (int i = 0; i < 5; i++) {
+            cad += bank.charAt(ran.nextInt(bank.length()));
+        }
+        return cad;
+    }
+    */
 }

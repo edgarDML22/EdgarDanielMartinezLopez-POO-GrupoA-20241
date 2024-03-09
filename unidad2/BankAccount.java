@@ -2,12 +2,18 @@ public class BankAccount {
     private long accountNumber;
     private double amount;
     private String type;
+    private boolean status = true;
 
     public BankAccount(long accountNumber, String type) {
+        if(validType(type)){
             this.accountNumber = accountNumber;
             this.type = type;
+        }
+        else{
+            this.status = false;
+        }
+            
     }
-
 
     public long getAccountNumber() {
         return accountNumber;
@@ -21,45 +27,57 @@ public class BankAccount {
         return amount;
     }
 
- 
+    public boolean isStatus() {
+        return status;
+    }
+
+    private boolean validType(String type){
+        switch(type){
+            case "A":
+            case "B":
+            case "C":
+                return true;
+
+            default:
+                return false;
+        }
+    }
 
     public void agregarDinero(double cargo){
         switch(type){
             case "A":
-            agregarDineroA(cargo);
+                agregarDineroA(cargo);
+                System.out.println("Money added succesfully");
             break;
 
             case "B":
-            agregarDineroB(cargo);
+                agregarDineroB(cargo);
+                System.out.println("Money added succesfully");
             break;
 
             case "C":
-            agregarDineroC(cargo);
-            break;
-
-            default:
-            System.out.println("No hay una cuenta bancaria existente");
-        
+                agregarDineroC(cargo);
+                System.out.println("Money added succesfully");
+            break;   
         }
     }
 
     public void retirarDinero(double retiro){
         switch(type){
             case "A":
-            retirarDineroA(retiro);
+                retirarDineroA(retiro);
+                System.out.println("Money taken succesfully");
             break;
 
             case "B":
-            retirarDineroB(retiro);
+                retirarDineroB(retiro);
+                System.out.println("Money taken succesfully");
             break;
 
             case "C":
-            retirarDineroC(retiro);
-            break;
-
-            default:
-            System.out.println("No hay una cuenta bancaria existente");
-        
+                retirarDineroC(retiro);
+                System.out.println("Money taken succesfully");
+            break; 
         }
     }
 
@@ -135,4 +153,8 @@ public class BankAccount {
             amount -= retiro;
         }
     }
+
+
+
+    
 }
