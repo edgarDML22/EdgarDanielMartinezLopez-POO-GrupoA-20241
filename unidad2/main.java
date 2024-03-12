@@ -19,8 +19,7 @@ public class main {
                 break;
 
                 case 3:
-                    bookStore.addBook();
-                    
+                    bookStore.addBook();     
                 break;
 
                 case 4:
@@ -33,27 +32,31 @@ public class main {
                 break;
 
                 case 6:
+                    bookStore.returnBook();
+                break;
+
+                case 7:
                     bookStore.showUserData();
                     
                 break;
 
-                case 7:
+                case 8:
                     bookStore.showUserList();
                 break;
 
-                case 8:
+                case 9:
                     bookStore.showBookList();
                 break;
 
-                case 9:
+                case 10:
                     bookStore.showActiveUsers();
                 break;
 
-                case 10:
+                case 11:
                     bookStore.showActiveBooks();
                 break;
 
-                case 11:
+                case 12:
                     bookStore.showInactiveBooks();
                 break;
             
@@ -74,13 +77,14 @@ public class main {
         System.out.println("3. Register a book");
         System.out.println("4. Remove a book");
         System.out.println("5. Rent a book");
-        System.out.println("6. Show the information of a specific user");
-        System.out.println("7. Show all the users registered");
-        System.out.println("8. Show all the books registered");
-        System.out.println("9. Show all the users registered with at least one book rented");
-        System.out.println("10. Show all the books that have been rented");
-        System.out.println("11. Show all the books that haven't been rented");
-        System.out.println("12. Get out of the book store");
+        System.out.println("6. Return book");
+        System.out.println("7. Show the information of a specific user");
+        System.out.println("8. Show all the users registered");
+        System.out.println("9. Show all the books registered");
+        System.out.println("10. Show all the users registered with at least one book rented");
+        System.out.println("11. Show all the books that have been rented");
+        System.out.println("12. Show all the books that haven't been rented");
+        System.out.println("13. Get out of the book store");
         System.out.println("*********************************************************");
     }
     
